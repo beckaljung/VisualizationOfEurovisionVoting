@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+ <html class="no-js"> 
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8">
+
+
+        <!-- Bootstrap core -->
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <!-- Css -->
+        <link rel="stylesheet" href="css/main.css">
+
+        <!--The css for the components-->
+        <link rel="stylesheet" href="css/map.css">
+        <link rel="stylesheet" href="css/slider.css">
+
+        <script src="https://d3js.org/d3.v4.js"></script>
+
+    </head>
+
+    <body>
+        
+        <div id="wrap">
+            <!-- Rubrik -->
+            <div class="centered">
+                <img src="img/eurovision.png">
+            </div>
+
+            <br><br><br>
+            <!-- The map and description-->
+            <div class="container">
+                <br><br><br>
+                <div>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <div id="map" style="height: 45vh;"></div>
+                        </div>
+                       <div class="col-xs-1">
+                            <h2 id="target">12 points</h2>
+                            <div id="theScale"></div>
+                            <h2 id="target">0 points</h2>
+                        </div>
+                        <div class="col-xs-5">
+                            <p id="infobox">
+                                Select a country! <br /> <br />
+                                Now you will see how the selected country use to give their points to the other countries. <br /> <br />
+                                You can either choose to look at all years the selected country competed
+                                or you can use the slider to select which years you want to look at.<br /> <br />
+                                When you have selected a country a graph will appear below the slider. <br />
+                                The graph shows how the other countries have voted at the selected country within the selected years.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div id="divA"> Click on a country!</div>
+
+            <div>  
+                </br>
+            </div>
+   
+
+            <!-- The slider. -->
+            <div class="multi-range-slider">
+                <input type="range" id="input-left" min="1975" max="2019" value="1975">
+                <input type="range" id="input-right" min="1975" max="2019" value="2019">
+        
+                <div class="slider">
+                    <div class="track"></div>
+                    <div class="range"></div>
+                    <div class="thumb left"></div>
+                    <div class="thumb right"></div>
+                </div>
+            </div>
+
+            <!-- The graph -->
+            <div class="col-12" id="tooltip">
+                <p><span id="tooltipGraph"> </span></p>
+            </div>
+            <br>
+
+            <div class="container">
+                <br><br><br>
+                <div>
+                    <div id="thegraph"> </div>
+                </div>
+            </div>
+
+        </div>
+
+         <!--Allready existing files -->
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+        <script src="js/vendor/d3.min.js"></script>
+        <script src="js/vendor/topojson.v1.min.js"></script>
+
+        <!--Our scripts -->
+        <script  src ="js/slider.js"> </script> 
+        <script src="js/map.js"></script>
+        <script src="js/country.js"></script>
+        <script src="js/votinggraph.js"></script>
+        <script src="js/main.js"></script>
+        
+
+    </body>
+</html>
